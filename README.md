@@ -1,4 +1,40 @@
-This is a template.
+# Install miniconda 
+```
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+```
+
+After installation init miniconda
+
+```
+~/miniconda3/bin/conda init bash
+~/miniconda3/bin/conda init zsh
+```
+
+Restart the terminal
+
+Create the enviroment
+```
+conda create -p ./env python=3.10 -y
+```
+
+Activate enviroment
+
+```
+conda activate ./env
+```
+
+Install dependencies for data processing
+```
+pip install -r requirements_data.txt
+```
+
+Install dependencies for training
+```
+pip install -r requirements_train.txt
+```
 
 # Experiment title 
 
