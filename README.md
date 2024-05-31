@@ -1,4 +1,15 @@
-# Install miniconda 
+# Developer Enviroment
+
+### Information for exact reproductivity.
+
+Working on a RunPod Pod with RTX 6000, template: "RunPod Pytorch 2.2.0" that has pytorch:2.2.0-py3.10-cuda12.1.1-devel-ubuntu22.04. With 128 Gb on container and disk space.
+
+To connect RunPod to VSCode for development follow this blog https://blog.runpod.io/how-to-connect-vscode-to-runpod/.
+
+After connected it is needed to install Python and Jupyter VSCode extensions on the remote machine.
+
+### Install miniconda on linux
+
 ```
 mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
@@ -15,7 +26,14 @@ After installation init miniconda
 
 Restart the terminal
 
+Go to the repo folder 
+
+```
+cd reynold-experiments
+```
+
 Create the enviroment
+
 ```
 conda create -p ./env python=3.10 -y
 ```
@@ -26,12 +44,18 @@ Activate enviroment
 conda activate ./env
 ```
 
+Select the created enviroment as the kernel for the notebooks.
+
+### Follow from this step on for local or Jupyter enviroment development.
+
 Install dependencies for data processing
+
 ```
 pip install -r requirements_data.txt
 ```
 
 Install dependencies for training
+
 ```
 pip install -r requirements_train.txt
 ```
